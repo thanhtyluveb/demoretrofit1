@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.demomvvm.viewmodel.WeatherViewModel"
+            />
+        <variable
+            name="main"
+            type="com.example.demomvvm.view.WeatherActivity"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="@{viewmodel.name}"
+            android:textColor="#1145FF"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+            android:id="@+id/temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#FFF311"
+            android:text="@{String.valueOf(viewmodel.temp)}"
+            android:textSize="80sp" />
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/colorPrimary"
+                android:text="@{String.valueOf(viewmodel.humidity)}"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/clouds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{String.valueOf(viewmodel.cloud)}"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/pressure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{String.valueOf(viewmodel.pressure)}"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/windr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{String.valueOf(viewmodel.windr)}"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/winsp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{String.valueOf(viewmodel.winsp)}"
+            android:textSize="40sp" />
+    </LinearLayout>
+</layout>
